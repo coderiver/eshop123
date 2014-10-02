@@ -1,19 +1,486 @@
 // Normally mainpage styles
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+body, html
+	height: 100%
+	background: white
+html
+	font-size: 62.5%
+.out, .sidebar
+	min-height: 100%
+	margin: 0 0 -78px 0
+	background: white
+	+r(800)
+		min-height: 0px
+		margin: 0px
+	&:after
+		display: block
+		content: ""
+		height: 78px
+		+r(800)
+			height: 0px
+//SIDEBAR
+.sidebar
+	float: left
+	position: relative
+	z-index: 3
+	width: 209px
+	height: 100%
+	border-right: 1px solid #cccccc 
+	+r(800)
+		width: 100%
+		height: auto
+		border: none
+		+clr
+		border-bottom: 1px solid #cccccc 
+	&__inner
+		padding: 54px 0 0 0px
+		float: left
+		position: relative
+		+r(1010)
+			padding: 0
+		+r(800)
+			&:after
+				height: 100%
+				width: 1px
+				background: #ccc
+				position: absolute
+				top: 0
+				left: 50%
+				content: "" 
+				z-index: 10
+		+r(600)
+			&:after
+				display: none
+	&__menu
+		padding-top: 13px
+		+r(800)
+			padding: 10px 0
+			+clr
+		li
+			width: 100%
+			+r(800)
+				display: block
+				width: 50%
+				float: left
+				text-align: center
+			+r(600)
+				width: 100%
+				text-align: left
+			a
+				display: block
+				padding: 7px 50px 10px 26px
+				+preg
+				color: #2c3e50
+				line-height: 18px
+				text-decoration: none
+				+fs(14)
+				position: relative
+				&:hover
+					background: #58a4ea
+					+pbold
+					color: white
+				span
+					position: absolute
+					top: 7px
+					right: 19px
+					+fs(13)
+					+preg
+					color: #b3cfea
+//OUT
+.out
+	position: relative
+	z-index: 2
+	margin: 0 0 -78px -210px
+	float: left
+	width: 100%
+	+r(800)
+		float: none
+		margin: 0
+		clear: both
+	&__inner
+		padding: 54px 0 0 209px
+		+r(1010)
+			padding: 0 0 0 209px
+		+r(800)
+			padding: 0
+.filter
+	padding: 10px 12px 8px 12px
+	border-left: 1px solid #cccccc 
+	text-align: center
+	+r(1010)
+		padding: 10px 20px
+	+r(800)
+		border: none
+	&__inner
+		width: 100%
+	&__pagers
+		display: block
+		width: 100%
+		text-align: center
+		max-width: 810px
+		margin: 0 auto
+		.pager
+			width: 9px
+			height: 8px
+			border-radius: 4px
+			background: #727272
+			display: inline-block
+			&:hover
+				background: darken(#727272, 10%) 
+.hire
+	width: 240px
+	display: inline-block
+	vertical-align: top
+	+box
+	border: 1px solid #dbdbdb
+	border-radius: 5px
+	margin: 10px
+	min-height: 340px
+	+tr(box-shadow 0.2s)
+	text-align: left
+	+r(1010)
+		margin: 15px
+	&__link
+		padding: 0 0 8px 0
+		display: block
+		width: 100%
+		+box
+		text-decoration: none
+		height: 250px
+		overflow: hidden
+		position: relative
+		&:after
+			position: absolute
+			bottom: -10px
+			left: 0
+			content: ""
+			width: 100%
+			height: 10px
+			box-shadow: 0px -5px 10px 0px rgba(255, 255, 255, 1)
+		&:hover
+			.hire__img
+				div
+					opacity: 1
+					+scale(1)
+	&:hover
+		background-color: rgb(245, 245, 245)
+		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.29)
+		.hire__link
+			&:after
+				box-shadow: 0px -5px 10px 0px rgba(245, 245, 245, 1)
+	&__img
+		padding: 8px 12px 2px 12px
+		+clr
+		position: relative
+		img
+			width: 100%
+			float: left
+		div
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			text-align: center
+			padding-top: 30px
+			height: 131px
+			background: rgba(0, 0, 0, 0.7)
+			opacity: 0
+			border-top-left-radius: 5px
+			border-top-right-radius: 5px
+			+scale(0.7)
+			+tr(all 0.4s)
+			p
+				+vertical
+				+preg
+				+ttu
+				line-height: 24px
+				display: inline-block
+				vertical-align: top
+				+fs(12)
+				width: 100%
+				color: #999999
+				i
+					+s(heart-icon-pink)
+					display: inline-block
+					vertical-align: middle
+					+r-icon
+						+sr(heart-icon-pink-2x)
+				span
+					display: inline-block
+					vertical-align: -2px
+					color: white
+			button
+				margin-top: 10px
+	&__info
+		padding: 6px 9px 0 9px
+	h4
+		+fs(14)
+		line-height: 14px
+		color: #365779
+		+pbold
+		+ttu
+		border-bottom: 1px solid #cdd5dd
+		display: inline
+		&:after
+			content: ""
+			width: 100%
+			height: 5px
+			display: block 
+	span, p
+		+preg
+		+fs(13)
+		color: #7c7c7c
+		line-height: 18px
+	p
+		color: #4a4a4a
+		width: 95%
+	&__skills
+		padding: 1px 4px 10px 9px
+		border-top: dotted 1px #b0b0b0
+		margin-top: 8px
+		span
+			margin-right: 10px
+.more
+	+fs(12)
+	border-bottom: 1px dotted #999999
+	+preg
+	line-height: 12px
+	color: #999999
+	&:hover
+		border: none
+	&:before
+		content: ""
+		width: 100%
+		height: 1px
+		display: block
+//HEADER
+.header
+	width: 100%
+	position: absolute
+	height: 54px
+	top: 0
+	left: 0
+	z-index: 99	
+	+clr
+	padding: 0 27px
+	+box
+	+vertical
+	text-align: right
+	border-bottom: 1px solid #cccccc 
+	background: white
+	+r(1010)
+		position: static
+		top: auto
+		left: auto
+		height: auto
+		padding: 0 27px 8px 27px
+	.logo
+		float: left
+		margin: 6px 0 0 0
+	&__btn
+		+s(menu-button)
+		float: right
+		display: none
+		margin-top: 10px
+		cursor: pointer
+		+scale(0.6)
+		+tr(transform 0.2s)
+		will-change: transform
+		&:hover
+			+scale(0.7)
+		+r(800)
+			display: block
+	.is-open
+		+scale(0.7)
+	&__menu
+		text-align: right
+		display: inline-block
+		vertical-align: middle
+		max-width: 560px
+		word-spacing: 1px
+		width: 100%
+		text-align: justify
+		font-size: 0.1px
+		+r(1010)
+			padding-top: 14px
+		+r(850)
+			max-width: 520px
+		+r(800)
+			display: none
+			float: right
+			clear: both
+		&:after
+			content: ""
+			width: 100%
+			display: inline-block  
+		li
+			text-align: right
+			display: inline-block
+			min-height: 21px
+			position: relative
+			+r(800)
+				display: block
+				padding: 5px
+			a
+				+vertical
+				text-align: right
+				+fs(12)
+				line-height: 26px
+				+pbold
+				+ttu
+				text-decoration: none
+				color: black
+				position: relative
+				+r(800)
+					+fs(14)
+				span
+					display: inline-block
+					vertical-align: -2px
+				.is-reg
+					+preg
+			.header__freelance, .header__language
+				padding-right: 15px
+				&:after
+					+s(arr-g)
+					position: absolute
+					top: 8px
+					right: 0
+					content: ""
+					
+	&__item
+		i
+			margin-right: 10px
+			vertical-align: middle
+			display: inline-block
+	&__login
+		i
+			+s(lock-icon)
+			+r-icon
+				+sr(lock-icon-2x)
+	&__freelance
+		i
+			+s(freelancer-icon)
+			+r-icon
+				+sr(freelancer-icon-2x)
+	&__favorite
+		i
+			+s(heart-icon)
+			+r-icon
+				+sr(heart-icon-2x)
+//SEARCH
+.topper
+	width: 100%
+.search
+	width: 100%
+	padding: 8px 0px 10px 16px
+	+box
+	background: #bfe5fd
+	+clr
+	position: relative
+	+r(1010)
+		padding: 8px 10px 10px 16px
+	+r(500)
+		text-align: center
+	&__wrap
+		width: 100%
+		max-width: 685px
+		float: left
+		+r(1020)
+			padding-right: 100px
+			max-width: 765px
+			+box
+		+r(500)
+			max-width: 500px
+			padding: 0px
+			margin: 5px auto 5px
+	&__keyword
+		border-bottom: 2px solid #8fc6e9
+		border-radius: 4px / 3px
+		background: white
+		width: 100%
+		max-width: 685px
+		+box
+		+fs(14)
+		+preg
+		+placeholder-color(#586167)
+		padding: 7px 20px 9px 45px
+		position: relative
+		background: url(../img/icons/search.png) no-repeat 1.5% 50% white
+		text-align: left
+		+r-icon
+			background: url(../img/icons/search-2x.png) no-repeat 1.5% 50% white
+	&__submit
+		+fs(12)
+		+pbold
+		color: white
+		background: #f3618d
+		border-bottom: 1px solid #c13d65
+		border-radius: 5px
+		width: 80px
+		+ttu
+		height: 33px
+		margin-left: 10px
+		+tr(background 0.4s)
+		float: left
+		+r(1020)
+			position: absolute
+			top: 8px
+			right: 20px
+		+r(500)
+			position: static
+			top: auto
+			right: auto
+			margin: 5px auto 0
+			width: 100px
+			float: none
+		&:hover
+			background: #fc89ac
+	
+//FOOTER
+.footer
+	position: relative
+	border-top: 1px solid #cccccc 
+	height: 57px
+	padding: 20px 0 0 0
+	width: 100%
+	z-index: 4
+	background: white
+	clear: both
+	+clr
+	+r(800)
+		height: auto
+		padding: 20px 0 
+	+r(500)
+		text-align: center
+	p
+		display: inline-block
+		+fs(13)
+		line-height: 18px
+		color: #3d3d3d
+		+plight
+		margin: 10px 40px 0 40px
+		+r(800)
+			display: block
+		+r(500)
+			clear: both
+			margin: 0
+.write-us
+	display: inline-block
+	background: #4e8cb8
+	color: white
+	border-radius: 2px
+	+fs(12)
+	+ttu
+	padding: 9px 18px 10px 17px
+	margin: 0 21px 0 0
+	float: right
+	+tr(background 0.4s)
+	+r(800)
+		margin: 0 21px 0 15px
+	+r(500)
+		margin: 0 auto 10px
+		float: none
+	&:hover
+		background: #8fc6e9
 
 
 

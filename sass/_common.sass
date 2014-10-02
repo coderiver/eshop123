@@ -52,28 +52,62 @@ body
 	font-family: Arial, sans-serif 
 	font-size: 12px 
 	line-height: 1.4
-
+//retina
+=r-icon
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+		@content
 
 // common blocks      
+h1, h2, h3, h4, h5, h6
+	font-weight: normal
+a
+	text-decoration: none
+//fonts
++font("ProximaNova Regular", proximanova-reg-webfont)
++font("ProximaNova Bold", proximanova-bold-webfont)
++font("ProximaNova Light", proximanova-light-webfont)
+
+
+
+=preg
+	font-family: "ProximaNova Regular", Arial, sans-serif
+=pbold
+	font-family: "ProximaNova Bold", Arial, sans-serif 
+=plight
+	font-family: "ProximaNova Light", Arial, sans-serif 
+
+=ttu
+	text-transform: uppercase
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//button
+.btn-skills
+	padding: 4px 5px 3px 5px
+	+fs(13)
+	color: white
+	line-height: 13px
+	+preg
+	background: #4781b6
+	display: inline-block
+	text-decoration: none
+	border-radius: 9px
+	margin: 3px 1px
+	+tr(background 0.4s)
+	&:hover
+		background: #f3618e
+.btn-hire
+	color: white
+	+fs(18)
+	background: #f3618e
+	height: 42px
+	width: 127px
+	+tr(background 0.4s)
+	+pbold
+	border-radius: 5px
+	&:hover
+		background: #fc89ac
 
 
 
